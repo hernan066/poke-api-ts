@@ -1,5 +1,5 @@
 {
-  "name": "poke-api-ts",
+  "name": "pokemon-static",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.2-beta.4",
+    "axios": "^0.26.0",
+    "canvas-confetti": "^1.5.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-parallax-tilt": "^1.6.4",
+    "sass": "^1.49.9",
+    "sharp": "^0.30.2"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.4.2",
     "@types/node": "17.0.21",
     "@types/react": "17.0.39",
     "eslint": "8.10.0",
