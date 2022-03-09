@@ -37,7 +37,7 @@ export const PokeCard: FC<Props> = ({pokemon}) => {
     <Tilt
       className="parallax-effect-glare-scale"
       perspective={500}
-      glareEnable={true}
+      glareEnable={false}
      
       tiltMaxAngleX={8}
       tiltMaxAngleY={8}

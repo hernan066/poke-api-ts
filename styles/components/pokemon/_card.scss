@@ -12,54 +12,47 @@
   --fire-color: #af1f1f;
   --fire-gradient: linear-gradient(to right, #b81111, #f3e13d);
   --fire-bg-color: linear-gradient(to bottom, #660703, #c49a9a);
-  
+
   --grass-color: #dde9d7;
   --grass-gradient: linear-gradient(to right, #54b811, #eef061);
   --grass-bg-color: linear-gradient(to bottom, #183a01, #bebea3c5);
-  
+
   --bug-color: #066902;
   --bug-gradient: linear-gradient(to right, #1e4703, #f0be61);
   --bug-bg-color: linear-gradient(to bottom, #066902, #bebea3c5);
-  
+
   --water-color: #2340e7;
   --water-gradient: linear-gradient(to right, #113eb8, #eef061);
   --water-bg-color: linear-gradient(to bottom, #02144d, #78bec7);
-  
-  
+
   --normal-color: #7c86bd;
   --normal-gradient: linear-gradient(to right, #3a559e, #b0dfae);
   --normal-bg-color: linear-gradient(to bottom, #4c5377, #bebea3c5);
-  
+
   --poison-color: #800db6;
   --poison-gradient: linear-gradient(to right, #9e3a99, #dfaed9);
   --poison-bg-color: linear-gradient(to bottom, #540479, #bebea3c5);
-  
+
   --ground-color: #858639;
   --ground-gradient: linear-gradient(to right, #816c44, #a3b125);
   --ground-bg-color: linear-gradient(to bottom, #52511d, #d4d4c1ec);
-  
+
   --fairy-color: #b60d83;
   --fairy-gradient: linear-gradient(to right, #9b1985, #dfaed9);
   --fairy-bg-color: linear-gradient(to bottom, #79046a, #bebea3c5);
 }
 
 .pokeCard-grid {
- display: flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  
-  gap:2%;
+
+  gap: 2%;
   max-width: 1500px;
-  
 }
 .parallax-effect-glare-scale {
- 
-  
-  
-  
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
+  cursor: pointer;
 }
 
 .card {
@@ -79,19 +72,17 @@
   height: 350px;
   width: 300px;
   margin: 2rem auto;
-  
 }
 
 .card__image {
   position: absolute;
   top: -20px;
-  
 }
 
 .card__image img {
   width: 200px;
   height: 200px;
-  filter: drop-shadow( -8px -8px 5px rgba(0,0,0,0.3));
+  filter: drop-shadow(-8px -8px 5px rgba(0, 0, 0, 0.3));
 }
 
 .card__image {
@@ -99,11 +90,6 @@
   display: block;
   height: 185px;
 }
-
-
-/* .card__content {
-  transform: translateZ(40px);
-} */
 
 .card__content-main {
   padding-bottom: 10px;
@@ -114,7 +100,6 @@
   margin-bottom: 1rem;
   letter-spacing: 4px;
   font-weight: 700;
-  
 }
 
 .card__stats {
@@ -133,7 +118,7 @@
 .tag {
   font-size: 12px;
   box-shadow: 2px 2px 2px rgba(68, 68, 68, 0.753);
- 
+
   border-radius: 10px;
   padding: 2px 5px;
 }
@@ -175,10 +160,8 @@
 }
 
 .card.grass {
-  
   background: var(--grass-bg-color);
   color: #111;
-  
 }
 .card__hp.grass::before {
   background: var(--grass-gradient);
@@ -188,9 +171,7 @@
   color: #fff;
 }
 
-
 .card.fire {
- 
   background: var(--fire-bg-color);
 }
 .card__hp.fire::before {
@@ -201,9 +182,7 @@
   color: rgb(250, 248, 248);
 }
 
-
 .card.water {
-  
   background: var(--water-bg-color);
 }
 .card__hp.water::before {
@@ -242,7 +221,7 @@
 .card__hp.poison::before {
   background: var(--poison-gradient);
 }
-.tag.poison{
+.tag.poison {
   background-color: var(--poison-color);
   color: rgb(250, 248, 248);
 }
@@ -253,7 +232,7 @@
 .card__hp.ground::before {
   background: var(--ground-gradient);
 }
-.tag.ground{
+.tag.ground {
   background-color: var(--ground-color);
   color: rgb(250, 248, 248);
 }
@@ -264,7 +243,7 @@
 .card__hp.fairy::before {
   background: var(--fairy-gradient);
 }
-.tag.fairy{
+.tag.fairy {
   background-color: var(--fairy-color);
   color: rgb(250, 248, 248);
 }
