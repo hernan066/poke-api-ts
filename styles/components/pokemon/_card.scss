@@ -1,58 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700|Nunito:600");
-
-:root {
-  --card-font-family: Cinzel Decorative, sans-serif;
-
-  --bg-card-color: linear-gradient(to bottom, #183a01, #eef06173);
-
-  --electric-color: #ffdd56;
-  --electric-gradient: linear-gradient(to right, #a86e3c, #f5ae67);
-  --electric-bg-color: linear-gradient(to bottom, #807e28, #d4d4c1ec);
-
-  --fire-color: #af1f1f;
-  --fire-gradient: linear-gradient(to right, #b81111, #f3e13d);
-  --fire-bg-color: linear-gradient(to bottom, #660703, #c49a9a);
-
-  --grass-color: #dde9d7;
-  --grass-gradient: linear-gradient(to right, #54b811, #eef061);
-  --grass-bg-color: linear-gradient(to bottom, #183a01, #bebea3c5);
-
-  --bug-color: #066902;
-  --bug-gradient: linear-gradient(to right, #1e4703, #f0be61);
-  --bug-bg-color: linear-gradient(to bottom, #066902, #bebea3c5);
-
-  --water-color: #2340e7;
-  --water-gradient: linear-gradient(to right, #113eb8, #eef061);
-  --water-bg-color: linear-gradient(to bottom, #02144d, #78bec7);
-
-  --normal-color: #7c86bd;
-  --normal-gradient: linear-gradient(to right, #3a559e, #b0dfae);
-  --normal-bg-color: linear-gradient(to bottom, #4c5377, #bebea3c5);
-
-  --poison-color: #800db6;
-  --poison-gradient: linear-gradient(to right, #9e3a99, #dfaed9);
-  --poison-bg-color: linear-gradient(to bottom, #540479, #bebea3c5);
-
-  --ground-color: #858639;
-  --ground-gradient: linear-gradient(to right, #816c44, #a3b125);
-  --ground-bg-color: linear-gradient(to bottom, #52511d, #d4d4c1ec);
-
-  --fairy-color: #b60d83;
-  --fairy-gradient: linear-gradient(to right, #9b1985, #dfaed9);
-  --fairy-bg-color: linear-gradient(to bottom, #79046a, #bebea3c5);
-}
-
 .pokeCard-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
+  min-height: 94vh;
+  max-width: 1800px;
   gap: 2%;
-  max-width: 1500px;
+  
 }
-.parallax-effect-glare-scale {
+.parallax-effect-img {
   cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+ 
 }
 
 .card {
@@ -65,34 +25,40 @@
   height: 350px;
   text-align: center;
   position: relative;
-
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.199);
   display: flex;
   flex-direction: column;
   color: #111;
   height: 350px;
   width: 300px;
   margin: 2rem auto;
+  
+ 
 }
 
 .card__image {
   position: absolute;
   top: -20px;
+  position: relative;
+  display: block;
+  height: 185px;
+  
+ 
 }
 
 .card__image img {
   width: 200px;
   height: 200px;
-  filter: drop-shadow(-8px -8px 5px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.3));
+  z-index: 9;
+ 
 }
 
-.card__image {
-  position: relative;
-  display: block;
-  height: 185px;
-}
+
 
 .card__content-main {
   padding-bottom: 10px;
+  
 }
 
 .card__title {
@@ -100,6 +66,10 @@
   margin-bottom: 1rem;
   letter-spacing: 4px;
   font-weight: 700;
+  text-shadow: 3px 5px 2px #474747;
+  color: #fff;
+  text-transform: capitalize;
+ 
 }
 
 .card__stats {
@@ -107,6 +77,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
 }
 
 .column {
@@ -117,8 +88,8 @@
 
 .tag {
   font-size: 12px;
-  box-shadow: 2px 2px 2px rgba(68, 68, 68, 0.753);
-
+  *box-shadow: 2px 2px 2px rgba(68, 68, 68, 0.753);
+  font-weight: 700;
   border-radius: 10px;
   padding: 2px 5px;
 }
@@ -147,103 +118,10 @@
   box-shadow: -2px -2px 2px #444;
 }
 
-/* //////////type///////// */
-.card.electric {
-  background: var(--electric-bg-color);
-}
-.card__hp.electric::before {
-  background: var(--electric-gradient);
-}
-.tag.electric {
-  background-color: var(--electric-color);
-  color: #111;
-}
-
-.card.grass {
-  background: var(--grass-bg-color);
-  color: #111;
-}
-.card__hp.grass::before {
-  background: var(--grass-gradient);
-}
-.tag.grass {
-  background-color: #54b81196;
-  color: #fff;
-}
-
-.card.fire {
-  background: var(--fire-bg-color);
-}
-.card__hp.fire::before {
-  background: var(--fire-gradient);
-}
-.tag.fire {
-  background-color: var(--fire-color);
-  color: rgb(250, 248, 248);
-}
-
-.card.water {
-  background: var(--water-bg-color);
-}
-.card__hp.water::before {
-  background: var(--water-gradient);
-}
-.tag.water {
-  background-color: var(--water-color);
-  color: rgb(250, 248, 248);
-}
-
-.card.bug {
-  background: var(--bug-bg-color);
-}
-.card__hp.bug::before {
-  background: var(--bug-gradient);
-}
-.tag.bug {
-  background-color: var(--bug-color);
-  color: rgb(250, 248, 248);
-}
-
-.card.normal {
-  background: var(--normal-bg-color);
-}
-.card__hp.normal::before {
-  background: var(--normal-gradient);
-}
-.tag.normal {
-  background-color: var(--normal-color);
-  color: rgb(250, 248, 248);
-}
-
-.card.poison {
-  background: var(--poison-bg-color);
-}
-.card__hp.poison::before {
-  background: var(--poison-gradient);
-}
-.tag.poison {
-  background-color: var(--poison-color);
-  color: rgb(250, 248, 248);
-}
-
-.card.ground {
-  background: var(--ground-bg-color);
-}
-.card__hp.ground::before {
-  background: var(--ground-gradient);
-}
-.tag.ground {
-  background-color: var(--ground-color);
-  color: rgb(250, 248, 248);
-}
-
-.card.fairy {
-  background: var(--fairy-bg-color);
-}
-.card__hp.fairy::before {
-  background: var(--fairy-gradient);
-}
-.tag.fairy {
-  background-color: var(--fairy-color);
-  color: rgb(250, 248, 248);
+.bg-img{
+  position: absolute;
+  z-index: 1;
+ left: 2px;
+ filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
+ top:-15px;
 }

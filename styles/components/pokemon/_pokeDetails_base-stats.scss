@@ -1,0 +1,131 @@
+:root {
+    --container-size: 240px;
+    --background-color: #fff;
+  /*  change the numbers below to be percentages of the circle  200p =100% (2.00) */
+   /*  --hhp: calc(0*(var(--container-size)/8));
+    --atk: calc(0*(var(--container-size)/8));
+    --def: calc(0*(var(--container-size)/8));
+    --spa: calc(0*(var(--container-size)/8));
+    --spd: calc(0*(var(--container-size)/8));
+    --spe: calc(0*(var(--container-size)/8)); */
+    --color: rgba(255, 118, 244, 0.8);
+    --hover-color: rgba(175, 16, 175, 0.9);
+  }
+  .container-stats {
+    margin: 40px auto;
+    position: relative;
+    height: var(--container-size);
+    width: var(--container-size);
+    border: var(--background-color) 2px solid;
+    border-radius: 100%;
+    background-image: 
+  
+  linear-gradient(to right, transparent 50%, var(--background-color) 50%, transparent 51%),
+  linear-gradient(30deg, transparent 50%, var(--background-color) 50%, transparent 51%), 
+  linear-gradient(-30deg, transparent 50%, var(--background-color) 50%, transparent 51%); 
+  }
+  .container-stats div {
+    border-style: solid;
+    transform-origin: left bottom;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transition: all 1s;
+  }
+  .container-stats div:hover {
+    
+    z-index: 5;
+    border-color: transparent transparent var(--hover-color) var(--hover-color);
+  }
+  
+  .tri1, .tri2, .tri3, .tri4, .tri5, .tri6 {
+    border-width: var(--width-one) var(--width-two);
+    border-color: transparent transparent var(--color) var(--color);
+    transform: matrix(var(--matrix));
+  }
+  .tri1 {
+    --angle: -30deg;
+    --matrix: 0.8660254, -0.5, 0, 1, 0, 0;
+    --width-one: var(--hhp);
+    --width-two: var(--atk);
+  }
+  .tri2 {
+    --angle: 30deg;
+    --matrix: 0.8660254, 0.5, -0.8660254, 0.5, 0, 0;
+    --width-one: var(--atk);
+    --width-two: var(--def);
+  }
+  .tri3 {
+    --angle: 90deg;
+    --matrix: 0, 1, -0.8660254, -0.5, 0, 0;
+    --width-one: var(--def);
+    --width-two: var(--spe);
+  }
+  .tri4 {
+    --angle: 150deg;
+    --matrix: -0.8660254, 0.5, 0, -1, 0, 0;
+    --width-one: var(--spe);
+    --width-two: var(--spd);
+  }
+  .tri5 {
+    --angle: -150deg;
+    --matrix: -0.8660254, -0.5, 0.8660254, -0.5, 0, 0;
+    --width-one: var(--spd);
+    --width-two: var(--spa);
+  }
+  .tri6 {
+    --angle: -90deg;
+    --matrix: 0, -1, 0.8660254, 0.5, 0, 0;
+    --width-one: var(--spa);
+    --width-two: var(--hhp);
+  }
+  .hp{
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .atk{
+      position: absolute;
+      top: 40px;
+      right: -45px;
+     
+  }
+  .def{
+      position: absolute;
+      bottom: 40px;
+      right: -45px;
+     
+  }
+  .spa{
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.spd{
+    position: absolute;
+    bottom: 40px;
+    left: -75px;
+   
+}
+.spe{
+    position: absolute;
+    top: 40px;
+    left: -65px;
+   
+}
+
+
+/* ///////////////////////table/////////////////////// */
+
+.table-stats{
+   margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #fff;
+  margin-top: 50px;
+}
+.table-stats tr td{
+  padding: 0px 15px;
+}
+

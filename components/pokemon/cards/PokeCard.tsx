@@ -6,14 +6,11 @@ import Tilt from "react-parallax-tilt";
 import { SmallPokemon } from "../../../interfaces";
 import { getPokemonInfo } from "../../../utils/getPokemonInfo";
 
-
-
 interface Props {
   pokemon: SmallPokemon;
 }
 
-export const PokeCard: FC<Props> = ({pokemon}) => {
-  
+export const PokeCard: FC<Props> = ({ pokemon }) => {
   const hp = pokemon.stats[0].base_stat;
   const attack = pokemon.stats[1].base_stat;
   const defense = pokemon.stats[2].base_stat;
@@ -23,37 +20,39 @@ export const PokeCard: FC<Props> = ({pokemon}) => {
 
   const type = pokemon.types[0].type.name;
 
-  
-
   const router = useRouter();
 
-    const handleClick = () => {
-        console.log('click')
-        router.push(`/name/${pokemon.name}`);
-    }
-  
-  
+  const handleClick = () => {
+    console.log("click");
+    router.push(`/name/${pokemon.name}`);
+  };
+
   return (
     <Tilt
-      className="parallax-effect-glare-scale"
+     
+      className="parallax-effect-img"
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
       perspective={500}
-      glareEnable={false}
+      transitionSpeed={1000}
      
-      tiltMaxAngleX={8}
-      tiltMaxAngleY={8}
-     
-      
-     
+      gyroscope={true}
     >
-      
-     
-      <div className={`card ${type}`}  onClick={handleClick}>
-       
+      <div className={`card ${type}`} onClick={handleClick}>
         <div className="card__image">
           <Image
             src={`/sprites/${pokemon.id}.gif`}
             height={185}
             width={150}
+            alt="raichu"
+            quality={70}
+          />
+        </div>
+        <div className="bg-img">
+          <Image
+            src={`/img/bg2.png`}
+            height={200}
+            width={300}
             alt="raichu"
             quality={70}
           />
@@ -67,7 +66,7 @@ export const PokeCard: FC<Props> = ({pokemon}) => {
 
           <div className="card__stats columns ">
             <div className="column">
-              {type} 
+              {type}
               <span className={`tag ${type}`}>Type</span>
             </div>
             <div className="column center-column ">
@@ -75,7 +74,7 @@ export const PokeCard: FC<Props> = ({pokemon}) => {
               <span className={`tag ${type}`}>Weight</span>
             </div>
             <div className="column ">
-              {(pokemon.height *0.1).toFixed(1) } m
+              {(pokemon.height * 0.1).toFixed(1)} m
               <span className={`tag ${type}`}>Height</span>
             </div>
           </div>

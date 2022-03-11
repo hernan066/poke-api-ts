@@ -1,0 +1,38 @@
+/* ////////////////////////////////evolution//////////////////////// */
+.article__evolution{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 400px;
+   
+   
+}
+.poke-card-evolution{
+    text-align: center;
+}
+
+.poke-evolution{
+    height: 150px;
+    width: 150px;
+    background-color: linear-gradient(0deg, rgba(255, 255, 255, 0.6) 0%, rgb(240, 93, 48, 0.5) 100%);;
+    border-radius: 50%;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in-out;
+}
+.poke-evolution:hover{
+    transform: scale(1.1);
+}
+.level-up{
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+

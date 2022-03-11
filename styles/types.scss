@@ -1,0 +1,203 @@
+:root {
+  --card-font-family: Cinzel Decorative, sans-serif;
+
+  --bg-card-color: linear-gradient(to bottom, #183a01, #eef06173);
+
+  --electric-color: #ffdd56;
+  --electric-gradient: linear-gradient(to right, #a86e3c, #f5ae67);
+  --electric-bg-color: linear-gradient(to bottom, #807e28, #d4d4c1ec);
+
+  --fire-color: #a82727;
+  --fire-gradient: linear-gradient(to right, #b81111, #f3aa3d);
+  --fire-bg-color: linear-gradient(to bottom, #0ca7d6de, #546072);
+
+  --grass-color: #3ea10c;
+  --grass-gradient: linear-gradient(to right, #54b811, #eef061);
+  --grass-bg-color: linear-gradient(to bottom, #0ca7d6de, #546072);
+
+  --bug-color: #066902;
+  --bug-gradient: linear-gradient(to right, #1e4703, #f0be61);
+  --bug-bg-color: linear-gradient(to bottom, #086e04, #bebea3c5);
+
+  --water-color: #2340e7;
+  --water-gradient: linear-gradient(to right, #113eb8, #61f0e9);
+  --water-bg-color: linear-gradient(to bottom, #0d9ac5a9, #777f8bb4);
+
+  --normal-color: #7c86bd;
+  --normal-gradient: linear-gradient(to right, #3a559e, #b0dfae);
+  --normal-bg-color: linear-gradient(to bottom, #4c5377, #bebea3c5);
+
+  --poison-color: #800db6;
+  --poison-gradient: linear-gradient(to right, #9e3a99, #dfaed9);
+  --poison-bg-color: linear-gradient(to bottom, #540479, #bebea3c5);
+
+  --ground-color: #858639;
+  --ground-gradient: linear-gradient(to right, #816c44, #a3b125);
+  --ground-bg-color: linear-gradient(to bottom, #52511d, #d4d4c1ec);
+
+  --fairy-color: #b60d83;
+  --fairy-gradient: linear-gradient(to right, #9b1985, #dfaed9);
+  --fairy-bg-color: linear-gradient(to bottom, #79046a, #bebea3c5);
+}
+
+/* //////////type card///////// */
+.card.electric {
+  background: var(--electric-bg-color);
+}
+.card__hp.electric::before {
+  background: var(--electric-gradient);
+}
+.tag.electric {
+  background-color: var(--electric-color);
+  color: #111;
+}
+
+.card.grass {
+  background: var(--grass-bg-color);
+  color: #111;
+}
+.card__hp.grass::before {
+  background: var(--grass-gradient);
+}
+.tag.grass {
+  background-color: var(--grass-color);
+  color: #fff;
+}
+
+.card.fire {
+  background: var(--fire-bg-color);
+}
+.card__hp.fire::before {
+  background: var(--fire-gradient);
+}
+.tag.fire {
+  background-color: var(--fire-color);
+  color: rgb(250, 248, 248);
+}
+
+.card.water {
+  background: var(--water-bg-color);
+}
+.card__hp.water::before {
+  background: var(--water-gradient);
+}
+.tag.water {
+  background-color: var(--water-color);
+  color: rgb(250, 248, 248);
+}
+
+.card.bug {
+  background: var(--bug-bg-color);
+}
+.card__hp.bug::before {
+  background: var(--bug-gradient);
+}
+.tag.bug {
+  background-color: var(--bug-color);
+  color: rgb(250, 248, 248);
+}
+
+.card.normal {
+  background: var(--normal-bg-color);
+}
+.card__hp.normal::before {
+  background: var(--normal-gradient);
+}
+.tag.normal {
+  background-color: var(--normal-color);
+  color: rgb(250, 248, 248);
+}
+
+.card.poison {
+  background: var(--poison-bg-color);
+}
+.card__hp.poison::before {
+  background: var(--poison-gradient);
+}
+.tag.poison {
+  background-color: var(--poison-color);
+  color: rgb(250, 248, 248);
+}
+
+.card.ground {
+  background: var(--ground-bg-color);
+}
+.card__hp.ground::before {
+  background: var(--ground-gradient);
+}
+.tag.ground {
+  background-color: var(--ground-color);
+  color: rgb(250, 248, 248);
+}
+
+.card.fairy {
+  background: var(--fairy-bg-color);
+}
+.card__hp.fairy::before {
+  background: var(--fairy-gradient);
+}
+.tag.fairy {
+  background-color: var(--fairy-color);
+  color: rgb(250, 248, 248);
+}
+
+/* //////////type side-card///////// */
+
+.sidebar__card.electric {
+  background: var(--electric-bg-color);
+}
+.sidebar__card.grass {
+  background: var(--grass-bg-color);
+}
+.sidebar__card.fire {
+  background: var(--fire-bg-color);
+}
+.sidebar__card.water {
+  background: var(--water-bg-color);
+}
+.sidebar__card.bug {
+  background: var(--bug-bg-color);
+}
+.sidebar__card.normal {
+  background: var(--normal-bg-color);
+}
+.sidebar__card.poison {
+  background: var(--poison-bg-color);
+}
+.sidebar__card.ground {
+  background: var(--ground-bg-color);
+}
+.sidebar__card.fairy {
+  background: var(--fairy-bg-color);
+}
+
+/////////////////type circle evolution///////////////////////
+.poke-evolution.electric {
+  background: var(--electric-bg-color);
+}
+.poke-evolution.grass {
+  background: var(--grass-bg-color);
+}
+.poke-evolution.fire {
+  background: var(--fire-bg-color);
+}
+.poke-evolution.water {
+  background: var(--water-bg-color);
+}
+.poke-evolution.bug {
+  background: var(--bug-bg-color);
+}
+.poke-evolution.normal {
+  background: var(--normal-bg-color);
+}
+
+.poke-evolution.poison {
+  background: var(--poison-bg-color);
+}
+
+.poke-evolution.ground {
+  background: var(--ground-bg-color);
+}
+.poke-evolution.fairy {
+  background: var(--fairy-bg-color);
+}

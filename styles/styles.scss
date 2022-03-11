@@ -1,2 +1,9 @@
-@import '../styles/components/pokemon/card';
 @import './base/base';
+@import './types';
+
+@import '../styles/components/ui/animatedBg';
+@import '../styles/components/ui/navbar';
+@import '../styles/components/pokemon/card';
+@import '../styles/components/pokemon/pokeDetails';
+@import '../styles/components/pokemon/pokeDetails_base-stats';
+@import '../styles/components/pokemon/pokeDetails_evolution';
