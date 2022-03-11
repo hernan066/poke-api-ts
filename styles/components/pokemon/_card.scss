@@ -1,13 +1,4 @@
-.pokeCard-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  min-height: 94vh;
-  max-width: 1800px;
-  gap: 2%;
-  
-}
+
 .parallax-effect-img {
   cursor: pointer;
   transform-style: preserve-3d;
@@ -121,7 +112,11 @@
 .bg-img{
   position: absolute;
   z-index: 1;
- left: 2px;
+ 
  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2));
- top:-15px;
+ top:-16px;
+ left: 0px;
+ *border-start-start-radius: 40px;
+ *border-start-end-radius: 40px;
+ overflow: hidden;
 }

@@ -38,6 +38,7 @@ export const PokeDetails: FC<Props> = ({ pokemon, species, evolution }) => {
               height={500}
               width={500}
               alt={pokemon.name}
+              
             />
           </div>
 

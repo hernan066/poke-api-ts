@@ -35,7 +35,7 @@ export const PokeCard: FC<Props> = ({ pokemon }) => {
       tiltMaxAngleY={10}
       perspective={500}
       transitionSpeed={1000}
-     
+      scale={1.05}
       gyroscope={true}
     >
       <div className={`card ${type}`} onClick={handleClick}>
@@ -50,7 +50,7 @@ export const PokeCard: FC<Props> = ({ pokemon }) => {
         </div>
         <div className="bg-img">
           <Image
-            src={`/img/bg2.png`}
+            src={`/img/bg4.png`}
             height={200}
             width={300}
             alt="raichu"

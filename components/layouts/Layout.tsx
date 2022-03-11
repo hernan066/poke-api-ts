@@ -26,8 +26,10 @@ export const Layout: FC<Props> = ({ children, title }) => {
       </Head>
            <Navbar />
            <AnimatedBg />
-      
+      <div className="layout__container">
         {children}
+
+      </div>
       
     </>
   );
