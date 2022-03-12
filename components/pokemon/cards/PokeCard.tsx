@@ -67,15 +67,18 @@ export const PokeCard: FC<Props> = ({ pokemon }) => {
           <div className="card__stats columns ">
             <div className="column">
               {type}
-              <span className={`tag ${type}`}>Type</span>
+              {/* <span className={`tag ${type}`}>Type</span> */}
+              <span className='tag'>Type</span>
             </div>
             <div className="column center-column ">
               {(pokemon.weight * 0.1).toFixed()} kg
-              <span className={`tag ${type}`}>Weight</span>
+             {/*  <span className={`tag ${type}`}>Weight</span> */}
+             <span className='tag'>Weight</span>
             </div>
             <div className="column ">
-              {(pokemon.height * 0.1).toFixed(1)} m
-              <span className={`tag ${type}`}>Height</span>
+              {(pokemon.height * 0.1).toFixed(1)} mt
+              {/* <span className={`tag ${type}`}>Height</span> */}
+              <span className='tag'>Height</span>
             </div>
           </div>
         </div>

@@ -50,6 +50,7 @@
 
 .card__content-main {
   padding-bottom: 10px;
+  text-transform: capitalize;
   
 }
 
@@ -58,7 +59,7 @@
   margin-bottom: 1rem;
   letter-spacing: 4px;
   font-weight: 700;
-  text-shadow: 3px 5px 2px #474747;
+  text-shadow: 0px 0px 5px #000000;
   color: #fff;
   text-transform: capitalize;
  
@@ -70,20 +71,24 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  font-family: 'Nunito', sans-serif;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   padding: 0 1.25rem;
+  text-transform: capitalize;
 }
 
 .tag {
   font-size: 12px;
   *box-shadow: 2px 2px 2px rgba(68, 68, 68, 0.753);
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 2px 5px;
+  
+  font-family: 'Nunito', sans-serif;
 }
 
 .center-column {
