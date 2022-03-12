@@ -36,7 +36,7 @@ export const PokeCard: FC<Props> = ({ pokemon }) => {
       perspective={500}
       transitionSpeed={1000}
       scale={1.05}
-      gyroscope={true}
+      
     >
       <div className={`card ${type}`} onClick={handleClick}>
         <div className="card__image">
