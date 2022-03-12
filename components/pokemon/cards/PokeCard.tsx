@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC } from "react";
 import Tilt from "react-parallax-tilt";
-import { SmallPokemon } from "../../../interfaces";
+import { PokeNameOrId } from "../../../interfaces";
 import { getPokemonInfo } from "../../../utils/getPokemonInfo";
 
 interface Props {
-  pokemon: SmallPokemon;
+  pokemon: PokeNameOrId;
 }
 
 export const PokeCard: FC<Props> = ({ pokemon }) => {

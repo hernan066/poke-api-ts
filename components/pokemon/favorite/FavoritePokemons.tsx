@@ -1,4 +1,4 @@
-import { Grid } from "@nextui-org/react";
+
 import { FC } from "react";
 import { PokeNameOrId } from "../../../interfaces";
 import { PokeCard } from "../cards/PokeCard";

@@ -32,7 +32,7 @@ export const PokeDetails: FC<Props> = ({ pokemon, species, evolution }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/`);
+    router.back();
   };
 
   const handleFavorite = () => {
