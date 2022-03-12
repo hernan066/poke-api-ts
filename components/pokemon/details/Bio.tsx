@@ -8,10 +8,10 @@ interface Props {
 
 export const Bio: FC<Props> = ({ species, pokemon }) => {
   const ability1 = pokemon.abilities[0].ability.name;
-  const ability2 = pokemon.abilities[1].ability.name;
+  const ability2 = pokemon.abilities[1]?.ability.name;
 
   const hidden1 = pokemon.abilities[0].is_hidden;
-  const hidden2 = pokemon.abilities[1].is_hidden;
+  const hidden2 = pokemon.abilities[1]?.is_hidden;
 
   return (
     <article className="article__bio">
@@ -37,7 +37,7 @@ export const Bio: FC<Props> = ({ species, pokemon }) => {
             </tr>
             <tr>
               <td>Capture Rate:</td>
-              <td className="center">  {species.capture}</td>
+              <td className="center"> {species.capture}</td>
             </tr>
             <tr>
               <td>Growth Rate:</td>
@@ -53,12 +53,14 @@ export const Bio: FC<Props> = ({ species, pokemon }) => {
             </tr>
 
             <tr>
-             
               {ability1} {hidden1 === true ? "(Hidden Ability)" : ""}
             </tr>
-            <tr>
-              {ability2} {hidden2 === true ? "(Hidden Ability)" : ""}
-            </tr>
+
+            {ability2 ? (
+              <tr>
+                {ability2} {hidden2 === true ? "(Hidden Ability)" : ""}
+              </tr>
+            ) : null}
           </table>
         </div>
       </div>

@@ -1,0 +1,1 @@
+export const numberOfPokemons:number = 100;

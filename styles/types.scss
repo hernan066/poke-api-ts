@@ -38,6 +38,22 @@
   --fairy-color: #b60d83;
   --fairy-gradient: linear-gradient(to right, #9b1985, #dfaed9);
   --fairy-bg-color: linear-gradient(to bottom, #79046a, #bebea3c5);
+  
+  --fighting-color: #d56723;
+  --fighting-gradient: linear-gradient(to right, #bd851e, #dfd0ae);
+  --fighting-bg-color: linear-gradient(to bottom, #794604, #bebea3c5);
+  
+  --psychic-color: #d523b7;
+  --psychic-gradient: linear-gradient(to right, #bd1eb0, #dfc0ae);
+  --psychic-bg-color: linear-gradient(to bottom, #790466, #bebea3c5);
+  
+  --rock-color: #705327;
+  --rock-gradient: linear-gradient(to right, #8f6f33, #ccb6aa);
+  --rock-bg-color: linear-gradient(to bottom, #795404, #bebea3c5);
+  
+  --ghost-color: #70276a;
+  --ghost-gradient: linear-gradient(to right, #8c338f, #c77e71);
+  --ghost-bg-color: linear-gradient(to bottom, #500350, #bebea3c5);
 }
 
 /* //////////type card///////// */
@@ -140,6 +156,46 @@
   background-color: var(--fairy-color);
   color: rgb(250, 248, 248);
 }
+.card.fighting {
+  background: var(--fighting-bg-color);
+}
+.card__hp.fighting::before {
+  background: var(--fighting-gradient);
+}
+.tag.fighting {
+  background-color: var(--fighting-color);
+  color: rgb(250, 248, 248);
+}
+.card.psychic {
+  background: var(--psychic-bg-color);
+}
+.card__hp.psychic::before {
+  background: var(--psychic-gradient);
+}
+.tag.psychic {
+  background-color: var(--psychic-color);
+  color: rgb(250, 248, 248);
+}
+.card.rock {
+  background: var(--rock-bg-color);
+}
+.card__hp.rock::before {
+  background: var(--rock-gradient);
+}
+.tag.rock {
+  background-color: var(--rock-color);
+  color: rgb(250, 248, 248);
+}
+.card.ghost {
+  background: var(--ghost-bg-color);
+}
+.card__hp.ghost::before {
+  background: var(--ghost-gradient);
+}
+.tag.ghost {
+  background-color: var(--ghost-color);
+  color: rgb(250, 248, 248);
+}
 
 /* //////////type side-card///////// */
 
@@ -170,6 +226,19 @@
 .sidebar__card.fairy {
   background: var(--fairy-bg-color);
 }
+.sidebar__card.fighting {
+  background: var(--fighting-bg-color);
+}
+.sidebar__card.psychic {
+  background: var(--psychic-bg-color);
+}
+.sidebar__card.rock {
+  background: var(--rock-bg-color);
+}
+.sidebar__card.ghost {
+  background: var(--ghost-bg-color);
+}
+
 
 /////////////////type circle evolution///////////////////////
 .poke-evolution.electric {
@@ -201,3 +270,16 @@
 .poke-evolution.fairy {
   background: var(--fairy-bg-color);
 }
+.poke-evolution.fighting {
+  background: var(--fighting-bg-color);
+}
+.poke-evolution.psychic {
+  background: var(--psychic-bg-color);
+}
+.poke-evolution.rock {
+  background: var(--rock-bg-color);
+}
+.poke-evolution.ghost {
+  background: var(--ghost-bg-color);
+}
+

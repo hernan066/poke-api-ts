@@ -11,9 +11,14 @@ import {
   PokeSpecies,
 } from "../../interfaces";
 import { localFavorites } from "../../utils";
-import { getPokemonInfo, getPokemonSpecies, getPokemonEvolution } from '../../utils/getPokemonInfo';
+import {
+  getPokemonInfo,
+  getPokemonSpecies,
+  getPokemonEvolution,
+} from "../../utils/getPokemonInfo";
 import { PokeDetails } from "../../components/pokemon/details/PokeDetails";
 import { Layout } from "../../components/layouts";
+import { numberOfPokemons } from "../../utils/numberOfPokemons";
 
 interface Props {
   pokemon: PokeNameOrId;
@@ -21,8 +26,11 @@ interface Props {
   evolution: PokeEvoChain;
 }
 
-const PokemonByNamePage: NextPage<Props> = ({ pokemon, species, evolution }) => {
- 
+const PokemonByNamePage: NextPage<Props> = ({
+  pokemon,
+  species,
+  evolution,
+}) => {
   console.log(evolution);
 
   const [isInFavorites, setIsInFavorites] = useState(
@@ -48,24 +56,20 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon, species, evolution }) => 
 
   return (
     <Layout title={pokemon.name}>
-        <PokeDetails pokemon={pokemon} species={species} evolution={evolution}/>
+      <PokeDetails pokemon={pokemon} species={species} evolution={evolution} />
     </Layout>
-
-  )
-  
-  
-  
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  
-  
-  const { data } = await pokeApi.get<PokemonListResponse>("/pokemon?limit=10");
+  const { data } = await pokeApi.get<PokemonListResponse>(
+    `/pokemon?limit=${numberOfPokemons}`
+  );
 
   const pokemonNames: string[] = data.results.map((pokemon) => pokemon.name);
 
   return {
-    //retorna los 151 pathname
+    //retorna los xxx(numberOfPokemons) pathname
     paths: pokemonNames.map((name) => ({ params: { name } })),
     fallback: false,
   };
@@ -76,11 +80,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   //1. obtener pokemon id
   const { data } = await pokeApi.get<Pokemon>(`/pokemon/${name}`);
-  
-
   const species = await getPokemonSpecies(data.id);
+  //2. obtener pokemon species
   const url = species.evo;
-  
+  //3. obtener pokemon evolution
   const evolution = await getPokemonEvolution(url);
   console.log(evolution);
 

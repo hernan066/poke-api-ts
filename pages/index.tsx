@@ -5,6 +5,7 @@ import { Layout } from "../components/layouts";
 
 import { PokeCard } from "../components/pokemon/cards/PokeCard";
 import { Pokemon, PokeNameOrId } from "../interfaces";
+import { numberOfPokemons } from '../utils/numberOfPokemons';
 
 interface Props {
   pokemons: PokeNameOrId[];
@@ -26,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   
   //obtener todos los datos de una sola vez
 
-  const pokemon_count: number = 10;
+  const pokemon_count: number = numberOfPokemons;
   const pokemonsData = [];
   for (let i = 1; i <= pokemon_count; i++) {
     const resp = await pokeApi.get<Pokemon>(`/pokemon/${i}`);

@@ -11,13 +11,13 @@ interface Props {
 export const Evolution: FC<Props> = ({ evolution, pokemon }) => {
   const evo1 = evolution.evoChain[0].species_name;
   const evo2 = evolution.evoChain[1].species_name;
-  const evo3 = evolution.evoChain[2].species_name;
+  const evo3 = evolution.evoChain[2]?.species_name;
 
   const lvl2 = evolution.evoChain[1].min_level;
-  const lvl3 = evolution.evoChain[2].min_level;
+  const lvl3 = evolution.evoChain[2]?.min_level;
 
   const typeEvo2 = evolution.evoChain[1].trigger_name;
-  const typeEvo3 = evolution.evoChain[2].trigger_name;
+  const typeEvo3 = evolution.evoChain[2]?.trigger_name;
 
   const type1 = pokemon.types[0].type.name;
 

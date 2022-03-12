@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
 import { Layout } from "../../components/layouts/Layout";
-import { NoFavorites } from "../../components/ui";
+
 import localStorageFavorites from "../../utils/localStorageFavorites";
 import { FavoritePokemons } from "../../components/pokemon";
 import { PokeNameOrId } from "../../interfaces";
 import { getPokemonInfoById } from "../../utils/getPokemonInfo";
+import { NoFavorites } from "../../components/pokemon/favorite/NoFavorites";
 
 const FavoritesPages = () => {
   const [favoritePokemons, setFavoritePokemons] = useState<number[]>([]);
