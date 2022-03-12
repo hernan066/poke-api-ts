@@ -1,5 +1,5 @@
 import { Stat, Type } from ".";
-import { Ability } from "./pokemon-full";
+import { Ability, Move } from "./pokemon-full";
 
 export interface PokemonListResponse {
   count: number;
@@ -8,14 +8,14 @@ export interface PokemonListResponse {
   results: PokeNameOrId[];
 }
 
-export interface SmallPokemon {
+/* export interface SmallPokemon {
   name: string;
   id: number;
   height: number;
   weight: number;
   types: Type[];
   stats: Stat[];
-}
+} */
 
 export interface PokeSpecies {
   bio: string;
@@ -31,9 +31,10 @@ export interface PokeNameOrId {
   height: number;
   weight: number;
   types: Type[];
-  base_experience: number;
   stats: Stat[];
+  base_experience: number;
   abilities: Ability[];
+  moves: Move[];
 }
 
 export interface PokeEvoChain {

@@ -3,12 +3,16 @@
 
 
 @import '../styles/pages/home';
+@import '../styles/pages/favorite';
 
 @import '../styles/layout/layout';
 
 @import '../styles/components/ui/animatedBg';
 @import '../styles/components/ui/navbar';
-@import '../styles/components/pokemon/card';
+
+@import '../styles/components/cards/card';
+
 @import '../styles/components/pokemon/pokeDetails';
 @import '../styles/components/pokemon/pokeDetails_base-stats';
 @import '../styles/components/pokemon/pokeDetails_evolution';
+@import '../styles/components/pokemon/pokeDetails_bio';

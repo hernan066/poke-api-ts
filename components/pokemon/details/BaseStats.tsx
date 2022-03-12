@@ -22,20 +22,21 @@ export const BaseStats:FC<Props> = ({pokemon, species}) => {
     document.documentElement.style.setProperty('--spd', `calc(${specialDefense* 0.01}*(var(--container-size)/8))`);
     document.documentElement.style.setProperty('--spe', `calc(${speed * 0.01}*(var(--container-size)/8))`);
   
+    const type = pokemon.types[0].type.name;
   
     return (
     
     
- <article className="article">
+ <article className="article__base-stats">
 
 
     <div className='container-stats'>
-        <div className='tri1'></div>
-        <div className='tri2'></div>
-        <div className='tri3'></div>
-        <div className='tri4'></div>
-        <div className='tri5'></div>
-        <div className='tri6'></div>
+        <div className={`tri1 ${type}`}></div>
+        <div className={`tri2 ${type}`}></div>
+        <div className={`tri3 ${type}`}></div>
+        <div className={`tri4 ${type}`}></div>
+        <div className={`tri5 ${type}`}></div>
+        <div className={`tri6 ${type}`}></div>
 
         <span className="hp">HP {hp}</span>
         <span className="atk">Atk {attack}</span>
@@ -45,7 +46,7 @@ export const BaseStats:FC<Props> = ({pokemon, species}) => {
         <span className="spe">Speed {speed}</span>
 
     </div>
-     <table className="table-stats">
+     {/* <table className="table-stats">
         <tr>
             <td> Weight</td>
             <td>Happiness</td>
@@ -58,7 +59,7 @@ export const BaseStats:FC<Props> = ({pokemon, species}) => {
             <td className="center" >  {pokemon.height}m</td>
             <td className="center">  {species.capture}</td>
         </tr>
-    </table> 
+    </table>  */}
 
 </article>
   )

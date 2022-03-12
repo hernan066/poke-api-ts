@@ -2,8 +2,24 @@ import axios from "axios";
 import { pokeApi } from "../api";
 import { Pokemon, Species } from "../interfaces";
 
-export const getPokemonInfo = async (nameOrId: string) => {
-  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${nameOrId}`);
+export const getPokemonInfo = async (name: string ) => {
+  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${name}`);
+
+  return {
+    id: data.id,
+    name: data.name,
+    sprites: data.sprites,
+    height: data.height,
+    weight: data.weight,
+    types: data.types,
+    base_experience: data.base_experience,
+    stats: data.stats,
+    abilities: data.abilities,
+    moves: data.moves,
+  };
+};
+export const getPokemonInfoById = async (id: number) => {
+  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${id}`);
 
   return {
     id: data.id,

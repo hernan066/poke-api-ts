@@ -82,6 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const url = species.evo;
   
   const evolution = await getPokemonEvolution(url);
+  console.log(evolution);
 
   return {
     props: {

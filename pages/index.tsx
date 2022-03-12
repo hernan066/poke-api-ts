@@ -4,10 +4,10 @@ import { pokeApi } from "../api";
 import { Layout } from "../components/layouts";
 
 import { PokeCard } from "../components/pokemon/cards/PokeCard";
-import { Pokemon, SmallPokemon } from "../interfaces";
+import { Pokemon, PokeNameOrId } from "../interfaces";
 
 interface Props {
-  pokemons: SmallPokemon[];
+  pokemons: PokeNameOrId[];
 }
 
 const HomePage: NextPage<Props> = ({ pokemons }) => {
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   
   //obtener todos los datos de una sola vez
 
-  const pokemon_count: number = 50;
+  const pokemon_count: number = 10;
   const pokemonsData = [];
   for (let i = 1; i <= pokemon_count; i++) {
     const resp = await pokeApi.get<Pokemon>(`/pokemon/${i}`);
@@ -34,14 +34,18 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     pokemonsData.push(resp.data);
   }
 
-  const pokemons: SmallPokemon[] = pokemonsData.map((data, idx) => {
+  const pokemons: PokeNameOrId[] = pokemonsData.map((data) => {
     return {
+      id: data.id,
       name: data.name,
-      id: idx + 1,
+      sprites: data.sprites,
       height: data.height,
       weight: data.weight,
       types: data.types,
+      base_experience: data.base_experience,
       stats: data.stats,
+      abilities: data.abilities,
+      moves: data.moves,
     };
   });
 

@@ -1,131 +1,344 @@
 :root {
-    --container-size: 240px;
-    --background-color: #fff;
+  --container-size: 240px;
+  --background-color: #fff;
   /*  change the numbers below to be percentages of the circle  200p =100% (2.00) */
-   /*  --hhp: calc(0*(var(--container-size)/8));
+  /*  --hhp: calc(0*(var(--container-size)/8));
     --atk: calc(0*(var(--container-size)/8));
     --def: calc(0*(var(--container-size)/8));
     --spa: calc(0*(var(--container-size)/8));
     --spd: calc(0*(var(--container-size)/8));
     --spe: calc(0*(var(--container-size)/8)); */
-    --color: rgba(255, 118, 244, 0.8);
-    --hover-color: rgba(175, 16, 175, 0.9);
-  }
-  .container-stats {
-    margin: 40px auto;
-    position: relative;
-    height: var(--container-size);
-    width: var(--container-size);
-    border: var(--background-color) 2px solid;
-    border-radius: 100%;
-    background-image: 
-  
-  linear-gradient(to right, transparent 50%, var(--background-color) 50%, transparent 51%),
-  linear-gradient(30deg, transparent 50%, var(--background-color) 50%, transparent 51%), 
-  linear-gradient(-30deg, transparent 50%, var(--background-color) 50%, transparent 51%); 
-  }
-  .container-stats div {
-    border-style: solid;
-    transform-origin: left bottom;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transition: all 1s;
-  }
-  .container-stats div:hover {
-    
-    z-index: 5;
-    border-color: transparent transparent var(--hover-color) var(--hover-color);
-  }
-  
-  .tri1, .tri2, .tri3, .tri4, .tri5, .tri6 {
-    border-width: var(--width-one) var(--width-two);
-    border-color: transparent transparent var(--color) var(--color);
-    transform: matrix(var(--matrix));
-  }
-  .tri1 {
-    --angle: -30deg;
-    --matrix: 0.8660254, -0.5, 0, 1, 0, 0;
-    --width-one: var(--hhp);
-    --width-two: var(--atk);
-  }
-  .tri2 {
-    --angle: 30deg;
-    --matrix: 0.8660254, 0.5, -0.8660254, 0.5, 0, 0;
-    --width-one: var(--atk);
-    --width-two: var(--def);
-  }
-  .tri3 {
-    --angle: 90deg;
-    --matrix: 0, 1, -0.8660254, -0.5, 0, 0;
-    --width-one: var(--def);
-    --width-two: var(--spe);
-  }
-  .tri4 {
-    --angle: 150deg;
-    --matrix: -0.8660254, 0.5, 0, -1, 0, 0;
-    --width-one: var(--spe);
-    --width-two: var(--spd);
-  }
-  .tri5 {
-    --angle: -150deg;
-    --matrix: -0.8660254, -0.5, 0.8660254, -0.5, 0, 0;
-    --width-one: var(--spd);
-    --width-two: var(--spa);
-  }
-  .tri6 {
-    --angle: -90deg;
-    --matrix: 0, -1, 0.8660254, 0.5, 0, 0;
-    --width-one: var(--spa);
-    --width-two: var(--hhp);
-  }
-  .hp{
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-  }
-  .atk{
-      position: absolute;
-      top: 40px;
-      right: -45px;
-     
-  }
-  .def{
-      position: absolute;
-      bottom: 40px;
-      right: -45px;
-     
-  }
-  .spa{
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.spd{
-    position: absolute;
-    bottom: 40px;
-    left: -75px;
-   
-}
-.spe{
-    position: absolute;
-    top: 40px;
-    left: -65px;
-   
+  --color: rgba(255, 118, 244, 0.8);
+  --hover-color: rgba(114, 114, 114, 0.9);
+
+  /* --grass-color: rgb(11, 126, 7); */
 }
 
+.article__base-stats {
+  width: 100%;
+}
+.container-stats {
+  margin: 40px auto;
+  position: relative;
+  height: var(--container-size);
+  width: var(--container-size);
+  border: var(--background-color) 2px solid;
+  border-radius: 100%;
+  background-image: linear-gradient(
+      to right,
+      transparent 50%,
+      var(--background-color) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      30deg,
+      transparent 50%,
+      var(--background-color) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -30deg,
+      transparent 50%,
+      var(--background-color) 50%,
+      transparent 51%
+    );
+}
+.container-stats div {
+  border-style: solid;
+  transform-origin: left bottom;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transition: all 1s;
+}
+.container-stats div:hover {
+  z-index: 5;
+  border-color: transparent transparent var(--hover-color) var(--hover-color);
+}
+
+.tri1,
+.tri2,
+.tri3,
+.tri4,
+.tri5,
+.tri6 {
+  border-width: var(--width-one) var(--width-two);
+  border-color: transparent transparent var(--grass-color) var(--grass-color);
+  transform: matrix(var(--matrix));
+}
+.tri1 {
+  --angle: -30deg;
+  --matrix: 0.8660254, -0.5, 0, 1, 0, 0;
+  --width-one: var(--hhp);
+  --width-two: var(--atk);
+}
+.tri2 {
+  --angle: 30deg;
+  --matrix: 0.8660254, 0.5, -0.8660254, 0.5, 0, 0;
+  --width-one: var(--atk);
+  --width-two: var(--def);
+}
+.tri3 {
+  --angle: 90deg;
+  --matrix: 0, 1, -0.8660254, -0.5, 0, 0;
+  --width-one: var(--def);
+  --width-two: var(--spe);
+}
+.tri4 {
+  --angle: 150deg;
+  --matrix: -0.8660254, 0.5, 0, -1, 0, 0;
+  --width-one: var(--spe);
+  --width-two: var(--spd);
+}
+.tri5 {
+  --angle: -150deg;
+  --matrix: -0.8660254, -0.5, 0.8660254, -0.5, 0, 0;
+  --width-one: var(--spd);
+  --width-two: var(--spa);
+}
+.tri6 {
+  --angle: -90deg;
+  --matrix: 0, -1, 0.8660254, 0.5, 0, 0;
+  --width-one: var(--spa);
+  --width-two: var(--hhp);
+}
+.hp {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.atk {
+  position: absolute;
+  top: 40px;
+  right: -45px;
+}
+.def {
+  position: absolute;
+  bottom: 40px;
+  right: -45px;
+}
+.spa {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.spd {
+  position: absolute;
+  bottom: 40px;
+  left: -75px;
+}
+.spe {
+  position: absolute;
+  top: 40px;
+  left: -65px;
+}
 
 /* ///////////////////////table/////////////////////// */
 
-.table-stats{
-   margin: 0px auto;
+.table-stats {
+  margin: 0px auto;
   padding: 20px;
   border: 1px solid #fff;
   margin-top: 50px;
 }
-.table-stats tr td{
+.table-stats tr td {
   padding: 0px 15px;
 }
 
+////////////////////////////////////////types base stats////////////////////////////////////////////////
+
+.tri1.grass,
+.tri2.grass,
+.tri3.grass,
+.tri4.grass,
+.tri5.grass,
+.tri6.grass {
+  border-color: transparent transparent var(--grass-color) var(--grass-color);
+}
+.tri1.fire,
+.tri2.fire,
+.tri3.fire,
+.tri4.fire,
+.tri5.fire,
+.tri6.fire {
+  border-color: transparent transparent var(--fire-color) var(--fire-color);
+}
+
+.tri1.water,
+.tri2.water,
+.tri3.water,
+.tri4.water,
+.tri5.water,
+.tri6.water {
+  border-color: transparent transparent var(--water-color) var(--water-color);
+}
+.tri1.electric,
+.tri2.electric,
+.tri3.electric,
+.tri4.electric,
+.tri5.electric,
+.tri6.electric {
+  border-color: transparent transparent var(--electric-color)
+    var(--electric-color);
+}
+.tri1.ground,
+.tri2.ground,
+.tri3.ground,
+.tri4.ground,
+.tri5.ground,
+.tri6.ground {
+  border-color: transparent transparent var(--ground-color) var(--ground-color);
+}
+.tri1.rock,
+.tri2.rock,
+.tri3.rock,
+.tri4.rock,
+.tri5.rock,
+.tri6.rock {
+  border-color: transparent transparent var(--rock-color) var(--rock-color);
+}
+.tri1.bug,
+.tri2.bug,
+.tri3.bug,
+.tri4.bug,
+.tri5.bug,
+.tri6.bug {
+  border-color: transparent transparent var(--bug-color) var(--bug-color);
+}
+.tri1.ghost,
+.tri2.ghost,
+.tri3.ghost,
+.tri4.ghost,
+.tri5.ghost,
+.tri6.ghost {
+  border-color: transparent transparent var(--ghost-color) var(--ghost-color);
+}
+.tri1.psychic,
+.tri2.psychic,
+.tri3.psychic,
+.tri4.psychic,
+.tri5.psychic,
+.tri6.psychic {
+  border-color: transparent transparent var(--psychic-color)
+    var(--psychic-color);
+}
+.tri1.ice,
+.tri2.ice,
+.tri3.ice,
+.tri4.ice,
+.tri5.ice,
+.tri6.ice {
+  border-color: transparent transparent var(--ice-color) var(--ice-color);
+}
+.tri1.dragon,
+.tri2.dragon,
+.tri3.dragon,
+.tri4.dragon,
+.tri5.dragon,
+.tri6.dragon {
+  border-color: transparent transparent var(--dragon-color) var(--dragon-color);
+}
+.tri1.dark,
+.tri2.dark,
+.tri3.dark,
+.tri4.dark,
+.tri5.dark,
+.tri6.dark {
+  border-color: transparent transparent var(--dark-color) var(--dark-color);
+}
+.tri1.steel,
+.tri2.steel,
+.tri3.steel,
+.tri4.steel,
+.tri5.steel,
+.tri6.steel {
+  border-color: transparent transparent var(--steel-color) var(--steel-color);
+}
+.tri1.fairy,
+.tri2.fairy,
+.tri3.fairy,
+.tri4.fairy,
+.tri5.fairy,
+.tri6.fairy {
+  border-color: transparent transparent var(--fairy-color) var(--fairy-color);
+}
+.tri1.normal,
+.tri2.normal,
+.tri3.normal,
+.tri4.normal,
+.tri5.normal,
+.tri6.normal {
+  border-color: transparent transparent var(--normal-color) var(--normal-color);
+}
+.tri1.fighting,
+.tri2.fighting,
+.tri3.fighting,
+.tri4.fighting,
+.tri5.fighting,
+.tri6.fighting {
+  border-color: transparent transparent var(--fighting-color)
+    var(--fighting-color);
+}
+.tri1.flying,
+.tri2.flying,
+.tri3.flying,
+.tri4.flying,
+.tri5.flying,
+.tri6.flying {
+  border-color: transparent transparent var(--flying-color) var(--flying-color);
+}
+.tri1.poison,
+.tri2.poison,
+.tri3.poison,
+.tri4.poison,
+.tri5.poison,
+.tri6.poison {
+  border-color: transparent transparent var(--poison-color) var(--poison-color);
+}
+.tri1.bug,
+.tri2.bug,
+.tri3.bug,
+.tri4.bug,
+.tri5.bug,
+.tri6.bug {
+  border-color: transparent transparent var(--bug-color) var(--bug-color);
+}
+.tri1.rock,
+.tri2.rock,
+.tri3.rock,
+.tri4.rock,
+.tri5.rock,
+.tri6.rock {
+  border-color: transparent transparent var(--rock-color) var(--rock-color);
+}
+.tri1.steel,
+.tri2.steel,
+.tri3.steel,
+.tri4.steel,
+.tri5.steel,
+.tri6.steel {
+  border-color: transparent transparent var(--steel-color) var(--steel-color);
+}
+
+@media (max-width: 450px) {
+  .container-stats {
+    margin-top: 55px;
+  }
+  .spd {
+    left: -55px;
+  }
+  .spe {
+    left: -55px;
+  }
+  @media (max-width: 380px){
+    :root{
+      --container-size: 180px;
+    }
+    .container-stats {
+      margin-top: 70px;
+    }
+  }
+  
+}
