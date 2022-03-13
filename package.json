@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.2-beta.4",
+    "animate.css": "^4.1.1",
     "axios": "^0.26.0",
     "canvas-confetti": "^1.5.1",
     "next": "12.1.0",
