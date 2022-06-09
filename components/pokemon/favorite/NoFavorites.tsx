@@ -1,4 +1,5 @@
 import { Container, Text, Image } from '@nextui-org/react';
+import { Z_ASCII } from 'zlib';
 
 export const NoFavorites = () => {
   return (
@@ -8,7 +9,8 @@ export const NoFavorites = () => {
         height: 'calc(100vh - 100px)',
         alignItems: 'center',
         justifyContent: 'center',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        zIndex: 1,
       }}>
         <Text h1>There are no favorites</Text>
         <Image 
