@@ -1,19 +1,21 @@
-
-
 export const AnimatedBg = () => {
   return (
-    <ul className="bg__circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
-
-  )
-}
+    <>
+     
+     <div className="bg__container"></div>
+      <ul className="bg__circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </>
+  );
+};

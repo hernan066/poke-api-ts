@@ -8,27 +8,9 @@
 }
 body{
 font-family: Cinzel Decorative, sans-serif;;
- background: linear-gradient(132deg, #922e3c, #2a0d5c, #212335);
- background-size: 400% 400%;
- animation: Gradient 60s ease infinite;
-  min-height: 100vh;
-
  
-  color: #fff;
- position: relative;
 }
-/* Animate Background*/
-@keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+
 
   
     

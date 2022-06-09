@@ -24,8 +24,8 @@ export const Layout: FC<Props> = ({ children, title }) => {
 
         
       </Head>
-           <Navbar />
            <AnimatedBg />
+           <Navbar />
       <div className="layout__container">
         {children}
 
